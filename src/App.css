@@ -1,0 +1,93 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* ================================
+   ✨ Modern Service Card Animations
+=================================== */
+
+/* Icon border animation */
+@keyframes draw-line {
+  0% {
+    border-color: transparent;
+    transform: scale(1);
+  }
+  25% {
+    border-top-color: #facc15;
+  }
+  50% {
+    border-right-color: #facc15;
+  }
+  75% {
+    border-bottom-color: #facc15;
+  }
+  100% {
+    border-color: #facc15;
+    transform: scale(1.2);
+  }
+}
+.animate-draw-line {
+  animation: draw-line 0.8s ease forwards;
+}
+
+/* Card hover lighting and scaling */
+.service-card {
+  position: relative;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Dynamic light gradient when hovering */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at var(--x) var(--y), rgba(255, 255, 255, 0.3), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.service-card:hover::before {
+  opacity: 1;
+}
