@@ -1,7 +1,16 @@
-import { motion } from "framer-motion"
-import { Button } from "../components/ui/button"
-import { ArrowRight } from "lucide-react"
-import Footer from "../Global/Footer"
+import { motion } from "framer-motion";
+import { Button } from "../components/ui/button";
+import { ArrowRight } from "lucide-react";
+import Footer from "../Global/Footer";
+
+// ✅ Import all images correctly (Vite/Vercel compatible)
+import escape from "../assets/escape.jpg";
+import paris from "../assets/paris.jpg";
+import safari from "../assets/safari.jpg";
+import bali from "../assets/bali.jpg";
+import maldives from "../assets/maldives.jpg";
+import switzerland from "../assets/switzerland.jpg";
+import pack from "../assets/pack.jpg";
 
 const PackagesPage = () => {
   const packages = [
@@ -9,52 +18,52 @@ const PackagesPage = () => {
       title: "Dubai Luxury Escape",
       price: "$1,200",
       duration: "7 Days • 6 Nights",
-      image: "/src/assets/escape.jpg",
+      image: escape,
       desc: "Indulge in a world of luxury — from golden deserts and 7-star hotels to yacht cruises along Dubai Marina.",
     },
     {
       title: "Paris Romantic Getaway",
       price: "$1,550",
       duration: "5 Days • 4 Nights",
-      image: "/src/assets/paris.jpg",
+      image: paris,
       desc: "Wander through charming Parisian streets, visit the Eiffel Tower, and experience fine dining in style.",
     },
     {
       title: "African Safari Adventure",
       price: "$980",
       duration: "6 Days • 5 Nights",
-      image: "/src/assets/safari.jpg",
+      image: safari,
       desc: "Witness the Big Five up close in Kenya’s Maasai Mara. Experience nature and wildlife like never before.",
     },
     {
       title: "Bali Paradise Retreat",
       price: "$1,250",
       duration: "8 Days • 7 Nights",
-      image: "/src/assets/bali.jpg",
+      image: bali,
       desc: "Discover lush jungles, stunning temples, and serene beaches — your island escape to pure tranquility.",
     },
     {
       title: "Maldives Overwater Bliss",
       price: "$1,800",
       duration: "6 Days • 5 Nights",
-      image: "/src/assets/maldives.jpg",
+      image: maldives,
       desc: "Wake up above turquoise waters in your private villa. Perfect for honeymoons and luxury seekers.",
     },
     {
       title: "Swiss Alps Explorer",
       price: "$1,400",
       duration: "7 Days • 6 Nights",
-      image: "/src/assets/switzerland.jpg",
+      image: switzerland,
       desc: "Explore breathtaking Alpine landscapes, ride scenic trains, and discover the charm of Swiss villages.",
     },
-  ]
+  ];
 
   return (
     <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen">
       {/* 🌍 HERO SECTION */}
       <section className="relative h-[32rem] flex items-center justify-center text-center overflow-hidden">
         <img
-          src="/src/assets/pack.jpg"
+          src={pack}
           alt="Luxury travel background"
           className="absolute inset-0 w-full h-full object-cover brightness-75"
         />
@@ -91,7 +100,7 @@ const PackagesPage = () => {
       </section>
 
       {/* ✈️ PACKAGES SECTION */}
-      <section className="py-24 container mx-auto px-6 md:px-12 text-center ">
+      <section className="py-24 container mx-auto px-6 md:px-12 text-center">
         <h2 className="text-4xl md:text-5xl font-serif font-bold -mt-18 mb-6 text-gray-900">
           Our Signature Travel Packages
         </h2>
@@ -118,7 +127,7 @@ const PackagesPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-80" />
               </div>
 
-              {/* CONTENT SECTION with GLASSMORPHISM */}
+              {/* CONTENT SECTION */}
               <div className="relative bg-white/30 backdrop-blur-lg p-6 text-left">
                 <h3 className="text-2xl font-bold mb-2 text-gray-900">{pkg.title}</h3>
                 <p className="text-gray-700 text-sm mb-3 leading-relaxed">{pkg.desc}</p>
@@ -147,7 +156,7 @@ const PackagesPage = () => {
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default PackagesPage
+export default PackagesPage;

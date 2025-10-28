@@ -1,7 +1,8 @@
-import { Plane, Hotel, Map, ShieldCheck } from "lucide-react"
-import Footer from "../Global/Footer"
-import { Button } from "../components/ui/button"
-import { useState } from "react"
+import { Plane, Hotel, Map, ShieldCheck } from "lucide-react";
+import Footer from "../Global/Footer";
+import { Button } from "../components/ui/button";
+import { useState } from "react";
+import servi from "../assets/servi.jpg"; // ✅ Proper image import
 
 const services = [
   {
@@ -24,26 +25,26 @@ const services = [
     title: "Travel Insurance",
     desc: "Peace of mind with comprehensive insurance coverage for all trips.",
   },
-]
+];
 
 const ServicesPage = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    const card = e.currentTarget
-    const rect = card.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
-    card.style.setProperty("--x", `${x}px`)
-    card.style.setProperty("--y", `${y}px`)
-  }
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty("--x", `${x}px`);
+    card.style.setProperty("--y", `${y}px`);
+  };
 
   return (
     <div className="bg-gradient-to-b from-gray-50 to-gray-100">
       {/* 🌍 HERO SECTION */}
       <section className="relative h-[32rem] flex items-center justify-center">
         <img
-          src="/src/assets/servi.jpg"
+          src={servi} // ✅ Fixed import used here
           alt="Services"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -115,7 +116,7 @@ const ServicesPage = () => {
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default ServicesPage
+export default ServicesPage;
