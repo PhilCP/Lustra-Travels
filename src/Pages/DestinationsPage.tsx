@@ -1,56 +1,66 @@
-import { motion } from "framer-motion"
-import { useRef } from "react"
-import { Button } from "../components/ui/button"
-import { ArrowRight } from "lucide-react"
-import Footer from "../Global/Footer"
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { Button } from "../components/ui/button";
+import { ArrowRight } from "lucide-react";
+import Footer from "../Global/Footer";
+
+// ✅ Proper image imports
+import santorini from "../assets/santorini.jpg";
+import tokyo from "../assets/tokyo.jpg";
+import dubai from "../assets/dubai.jpg";
+import venice from "../assets/venice.jpg";
+import bali from "../assets/bali.jpg";
+import cappadocia from "../assets/cappadocia.jpg";
+import destinationsBg from "../assets/destinations.jpg";
 
 const DestinationsPage = () => {
   const destinations = [
     {
       title: "Santorini, Greece",
-      image: "/src/assets/santorini.jpg",
+      image: santorini,
       desc: "Iconic whitewashed villages, crystal-clear waters, and sunsets that paint the sky with magic.",
     },
     {
       title: "Tokyo, Japan",
-      image: "/src/assets/tokyo.jpg",
+      image: tokyo,
       desc: "A dazzling mix of tradition and technology, neon lights, temples, and unforgettable cuisine.",
     },
     {
       title: "Dubai, UAE",
-      image: "/src/assets/dubai.jpg",
+      image: dubai,
       desc: "Luxury, innovation, and desert adventures, a city where modern marvels meet Arabian charm.",
     },
     {
       title: "Venice, Italy",
-      image: "/src/assets/venice.jpg",
+      image: venice,
       desc: "Gondola rides through romantic canals and historic architecture that whispers timeless stories.",
     },
     {
       title: "Bali, Indonesia",
-      image: "/src/assets/bali.jpg",
+      image: bali,
       desc: "Lush jungles, serene temples, and golden beaches, your tropical escape awaits.",
     },
     {
       title: "Cappadocia, Turkey",
-      image: "/src/assets/cappadocia.jpg",
+      image: cappadocia,
       desc: "Hot air balloons over fairy chimneys, a dreamlike landscape straight from a painting.",
     },
-  ]
+  ];
 
-  //  Reference for scrolling
-  const spotsRef = useRef<HTMLDivElement | null>(null)
+  // Scroll reference
+  const spotsRef = useRef<HTMLDivElement | null>(null);
+
 
   const handleScrollToSpots = () => {
-    spotsRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
+    spotsRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen">
-      {/*  HERO SECTION */}
+      {/* HERO SECTION */}
       <section className="relative h-[32rem] flex items-center justify-center text-center overflow-hidden">
         <img
-          src="/src/assets/destinations.jpg"
+          src={destinationsBg}
           alt="Destinations Background"
           className="absolute inset-0 w-full h-full object-cover brightness-75"
         />
@@ -90,7 +100,7 @@ const DestinationsPage = () => {
         </div>
       </section>
 
-      {/*  DESTINATIONS GRID */}
+      {/* DESTINATIONS GRID */}
       <section ref={spotsRef} className="py-24 container mx-auto px-6 md:px-12 text-center">
         <h2 className="text-4xl md:text-5xl font-serif font-bold -mt-18 mb-6 text-gray-900">
           Top Travel Spots
@@ -143,7 +153,7 @@ const DestinationsPage = () => {
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default DestinationsPage
+export default DestinationsPage;
