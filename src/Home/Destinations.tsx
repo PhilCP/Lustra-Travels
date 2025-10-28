@@ -1,26 +1,31 @@
-import { Button } from "../components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { Button } from "../components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+// ✅ Import your images like this
+import uea from "../assets/uea.jpg";
+import congo from "../assets/congo.jpg";
+import kenya from "../assets/kenya.jpg";
 
 const destinations = [
   {
     id: 1,
     title: "United Arab Emirates",
     label: "10 Destinations",
-    image: "/src/assets/uea.jpg",
+    image: uea,
   },
   {
     id: 2,
     title: "DR Congo",
     label: "10 Destinations",
-    image: "/src/assets/congo.jpg",
+    image: congo,
   },
   {
     id: 3,
     title: "Kenya",
     label: "10 Destinations",
-    image: "/src/assets/kenya.jpg",
+    image: kenya,
   },
-]
+];
 
 const Destinations = () => {
   return (
@@ -79,7 +84,7 @@ const Destinations = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Destinations
+export default Destinations;

@@ -1,6 +1,6 @@
 import { Quote } from "lucide-react";
 import { motion } from "framer-motion";
-import venice from "../assets/prof.jpg"; // ✅ use your image here
+import venice from "../assets/prof.jpg"; 
 
 export default function Testimonial() {
   const testimonials = [

@@ -1,39 +1,49 @@
-import { Button } from "../components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { Button } from "../components/ui/button";
+import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import hero from "../assets/hero.jpg"; // ✅ Proper import for Vercel
 
 const Hero = () => {
   return (
     <section
-      className="relative h-[32rem] bg-cover bg-center"
-      style={{ backgroundImage: "url('/src/assets/hero.jpg')" }}
+      className="relative h-[36rem] bg-cover bg-center flex items-center"
+      style={{ backgroundImage: `url(${hero})` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
       {/* Content */}
       <div className="relative container mx-auto h-full flex flex-col justify-center px-6 md:px-16 text-white z-10">
         <div className="flex flex-col md:flex-row justify-between items-center w-full">
-          <div>
-            <h1 className="text-3xl md:text-5xl font-serif font-bold mt-60 mb-2 leading-tight">
-              Luxury Travel.<br />Tailored for you
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-4 leading-tight">
+              Luxury Travel. <br /> Tailored for You.
             </h1>
             <p className="max-w-md text-white/90 mb-8">
               From major cities to hidden gems, we transform your travel fantasies
               into unforgettable adventures. Adventure begins here.
             </p>
-          </div>
 
-          {/* Button aligned to the right */}
-          <Button
-            className="bg-white text-black hover:bg-gray-200 rounded-full px-6 py-6 flex items-center gap-2 text-lg mt-4 -mb-75 md:mt-0"
-            onClick={() => alert('Booking coming soon!')}
-          >
-            Book now <ArrowRight size={18} />
-          </Button>
+            <Button
+              className="bg-white text-black hover:bg-gray-200 rounded-full px-8 py-6 flex items-center gap-2 text-lg transition-all duration-300"
+              onClick={() =>
+                document
+                  .getElementById("destinations")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              Start Exploring <ArrowRight size={18} />
+            </Button>
+          </motion.div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
