@@ -2,8 +2,8 @@ import Footer from "../Global/Footer";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { Button } from "../components/ui/button";
 
-// Import map image or background if needed
-import contactBg from "../assets/contact-bg.jpg";
+
+import contactBg from "../assets/servi.jpg";
 
 const ContactPage = () => {
   return (

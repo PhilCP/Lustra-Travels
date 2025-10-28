@@ -1,14 +1,17 @@
 import { Button } from "../components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import hero from "../assets/hero.jpg"; // ✅ Proper import for Vercel
+import hero from "../assets/hero.jpg"; 
 
 const Hero = () => {
   return (
-    <section
-      className="relative h-[36rem] bg-cover bg-center flex items-center"
-      style={{ backgroundImage: `url(${hero})` }}
-    >
+   <section className="relative h-[36rem] flex items-center overflow-hidden">
+  {/* Background image as a real <img> */}
+  <img
+    src={hero}
+    alt="Luxury travel"
+    className="absolute inset-0 w-full h-full object-cover "
+  />
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
