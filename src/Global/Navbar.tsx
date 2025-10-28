@@ -1,6 +1,6 @@
-
 import { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
+import logo from "../assets/lustra-logo.png" // ✅ Proper image import for Vercel
 
 const Navbar = () => {
   const location = useLocation()
@@ -18,8 +18,14 @@ const Navbar = () => {
   return (
     <header className="absolute top-0 left-0 w-full z-50">
       <div className="container mx-auto px-6 py-5 flex justify-between items-center">
-        {/* Logo */}
-        <h1 className="text-2xl font-serif text-white">Lustra Travels</h1>
+        {/* ✅ Logo Image instead of text */}
+        <Link to="/" onClick={() => setActive("/")}>
+          <img
+            src={logo}
+            alt="Lustra Travels Logo"
+            className="w-32 md:w-40 object-contain"
+          />
+        </Link>
 
         {/* Navigation */}
         <nav className="hidden md:flex gap-4 text-white/90 font-medium">
@@ -38,14 +44,6 @@ const Navbar = () => {
             </Link>
           ))}
         </nav>
-
-        {/* Contact Button */}
-        {/* <Button
-          variant="outline"
-          className="hidden md:flex items-center gap-2 bg-white/10 text-white border border-white hover:bg-white hover:text-black rounded-full transition-all duration-300"
-        >
-          <Phone size={16} /> Contact Us
-        </Button> */}
       </div>
     </header>
   )
